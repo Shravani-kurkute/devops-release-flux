@@ -1,4 +1,5 @@
-import request from 'supertest';
+content = open('src/__tests__/integration/api.test.js', 'w')
+content.write("""import request from 'supertest';
 import configureApp from '../../api/app.js';
 
 const app = configureApp();
@@ -124,3 +125,7 @@ describe('POST /api/v1/flags/:flagId/schedule', () => {
     expect(res.status).toBe(401);
   });
 });
+""")
+content.close()
+print('File written successfully!')
+```

@@ -1,4 +1,6 @@
-import request from 'supertest';
+const fs = require('fs');
+
+const content = `import request from 'supertest';
 import configureApp from '../../api/app.js';
 
 const app = configureApp();
@@ -123,4 +125,9 @@ describe('POST /api/v1/flags/:flagId/schedule', () => {
     const res = await request(app).post('/api/v1/flags/flag-1/schedule').send({ targetStatus: true, scheduledTime: new Date().toISOString() });
     expect(res.status).toBe(401);
   });
-});
+});`;
+
+fs.writeFileSync('src/__tests__/integration/api.test.js', content);
+console.log('File written successfully!');
+```
+
