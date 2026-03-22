@@ -15,6 +15,7 @@ pids
 # Environment variables
 .env
 .env.test
+.env*
 
 # Build and Coverage
 dist
